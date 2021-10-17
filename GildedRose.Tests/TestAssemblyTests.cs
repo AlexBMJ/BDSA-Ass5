@@ -20,14 +20,10 @@ namespace GildedRose.Tests
                 {
                     new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = -1},
                     new Item {Name = "Elixir of the Mongoose", SellIn = -1, Quality = 7},
-                    new Item() {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
-                    new Item {Name = "Aged Brie", SellIn = -2, Quality = 45},
-                    new Item
-                    {
-                        Name = "Backstage passes to a TAFKAL80ETC concert",
-                        SellIn = 0,
-                        Quality = 45
-                    },
+                    new Sulfuras() { SellIn = 0, Quality = 80},
+                    new AgedBrie() {SellIn = -2, Quality = 45},
+                    new BackStage()
+                    {SellIn = 0, Quality = 45},
                 }
             };
           
@@ -40,15 +36,15 @@ namespace GildedRose.Tests
             _program.Items = null;
             _program.Items = new List<Item>()
             {
-                new Item(){Name = "Aged Brie", SellIn = -2, Quality = 45}
+                new AgedBrie(){ SellIn = -2, Quality = 45}
             };
             _program.Items.UpdateQuality();
             
                 var expected = new List<Item>()
                 {
-                    new Item()
+                    new AgedBrie()
                     {
-                        Name = "Aged Brie", SellIn = -3, Quality = 47
+                         SellIn = -3, Quality = 47
                     }
                 };
                 Assert.Equal(expected[0].Name, _program.Items[0].Name);
@@ -64,15 +60,14 @@ namespace GildedRose.Tests
             _program.Items = null;
             _program.Items = new List<Item>()
             {
-               new Item(){ Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -2, Quality = 45}
+               new BackStage(){ SellIn = -2, Quality = 45}
             };
             _program.Items.UpdateQuality();
             
             var expected = new List<Item>()
             {
-                new Item
+                new BackStage()
                 {
-                    Name = "Backstage passes to a TAFKAL80ETC concert",
                     SellIn = -3,
                     Quality = 0
                 }
@@ -89,7 +84,7 @@ namespace GildedRose.Tests
             _program.Items = null;
             _program.Items = new List<Item>()
             {
-                new Item() {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80}
+                new Sulfuras() {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80}
             };
             
             _program.Items.UpdateQuality();
@@ -97,7 +92,7 @@ namespace GildedRose.Tests
             
             var expected = new List<Item>()
             {
-                new Item() {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80}
+                new Sulfuras() {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80}
             };
             Assert.Equal(expected[0].Name, _program.Items[0].Name);
             Assert.Equal(expected[0].SellIn, _program.Items[0].SellIn);
