@@ -13,15 +13,5 @@ namespace GildedRose.Console
                 item.UpdateQuality();
             }
         }
-        
-        public static void Print(this IEnumerable<Item> list)
-        {
-            foreach (var item in list)
-            {
-                System.Console.WriteLine("Item Name: " + item.Name + ", SellIn: " + item.SellIn + ", Quality: " + item.Quality);
-            }
-        }
-        
-        
     }
 }

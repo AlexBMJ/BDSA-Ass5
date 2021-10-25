@@ -3,31 +3,22 @@
     public class Conjured : Item
     {
         
-        public override string Name
-        {
-            get
-            {
-                return "Conjured";
-            }
-            
-        }
+        public Conjured() => Name ??= "Conjured";
         public override void UpdateQuality()
         {
             if (Quality > 0)
             {
-                SellIn = SellIn - 1;
+                Quality = Quality - 2;
             }
+
+            SellIn = SellIn - 1;
 
             if (SellIn < 0)
             {
                 if (Quality > 0)
                 {
-                    Quality = Quality - 4;
+                    Quality = Quality - 2;
                 }
-            }
-            else
-            {
-                Quality = Quality - 2;
             }
         }
     }

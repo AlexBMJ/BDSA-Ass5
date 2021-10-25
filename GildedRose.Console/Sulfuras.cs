@@ -3,16 +3,9 @@
     public class Sulfuras : Item
     {
         
-        public override string Name
-        {
-            get
-            {
-                return "Sulfuras";
-            }
-            
-        }
-
-
+        public Sulfuras() => Name ??= "Sulfuras, Hand of Ragnaros";
+        
+        
         public override void UpdateQuality()
         {
             

@@ -2,15 +2,9 @@
 {
     public class AgedBrie : Item
     {
+
+        public AgedBrie() => Name ??= "Aged Brie";
         
-        public override string Name
-        {
-            get
-            {
-                return "Aged Brie";
-            }
-            
-        }
 
         public override void UpdateQuality()
         {
