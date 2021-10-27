@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using GildedRose.Console;
+using GildedRose;
 using Xunit;
 using Xunit.Sdk;
 

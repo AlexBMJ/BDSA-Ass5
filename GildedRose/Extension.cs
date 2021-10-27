@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace GildedRose.Console
+namespace GildedRose
 {
     public static class Extension
     {
