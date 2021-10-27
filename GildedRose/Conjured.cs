@@ -1,4 +1,4 @@
-﻿namespace GildedRose.Console
+﻿namespace GildedRose
 {
     public class Conjured : Item
     {
